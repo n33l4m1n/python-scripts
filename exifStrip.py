@@ -1,6 +1,5 @@
 import os
 import sys
-#import Image
 from PIL import Image
 
 image_file = input("Enter Image Path: ")
