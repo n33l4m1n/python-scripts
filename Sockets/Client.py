@@ -8,6 +8,11 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Connect to the server at localhost port 4242
 s.connect((socket.gethostname(), 4242))
 
-#
-msg = s.recv(1024)
-print(msg.decode("utf-8"))
+full_message = ''
+while True:
+    message = s.recv(8)
+    if len(message) <= 0:
+        break
+    full_message = full_message + message.decode('utf-8')
+
+print(full_message)
